@@ -18,7 +18,12 @@ TITLE = "言葉の結び目"
 ## main
 def ch_main(w: World):
     return w.chapter("main",
-            ep_demo(w),
+            ep_demo(w).omit(),
+            ## NOTE
+            ##      - SNSの親友
+            ##      - 彼女が死んだ
+            ##      - 彼女の実家に行く
+            ##      - 彼女の本音を見つけ、もうひとりの自分だったと知る
             )
 
 def world():
