@@ -11,6 +11,10 @@ from config import DAYS, ITEMS, LAYERS, PERSONS, RUBIS, STAGES, TIMES, WORDS
 from src.demo.main import ep_demo
 
 
+## defines
+TITLE = "言葉の結び目"
+
+
 ## main
 def ch_main(w: World):
     return w.chapter("main",
@@ -20,7 +24,7 @@ def ch_main(w: World):
 def world():
     """Create a world.
     """
-    w = World("title")
+    w = World(TITLE)
     w.setCommonData()
     w.setAssets(basic.ASSET)
     w.buildDB(PERSONS,
