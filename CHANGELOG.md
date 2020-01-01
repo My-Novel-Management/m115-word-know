@@ -6,12 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-## [0.0.1] - 2019-XX-XX
+## [0.0.1] - 2020-01-01
 ### Added
 - This CHANGELOG file to hopefully serve as an evolving example of a standardized open source project CHANGELOG.
 - README one line implemented.
 
-<!--Must change link URL-->
-
-[Unreleased]: https://github.com/XXX/compare/v0.0.1...HEAD
-[0.0.1]: https://github.com/XXX/releases/v0.0.1
+[Unreleased]: https://github.com/My-Novel-Management/m115-word-know/compare/v0.0.1...HEAD
+[0.0.1]: https://github.com/My-Novel-Management/m115-word-know/releases/v0.0.1
