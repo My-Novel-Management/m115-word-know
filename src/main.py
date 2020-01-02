@@ -9,6 +9,7 @@ from storybuilder.builder.world import World
 from storybuilder.assets import basic
 from config import DAYS, ITEMS, LAYERS, PERSONS, RUBIS, STAGES, TIMES, WORDS
 from src.demo.main import ep_demo
+from src.friend import ep_myfriend
 from src.herdead import ep_herdead
 from src.herhome import ep_herhome
 from src.truth import ep_truth
@@ -27,6 +28,7 @@ def ch_main(w: World):
             ##      - 彼女が死んだ
             ##      - 彼女の実家に行く
             ##      - 彼女の本音を見つけ、もうひとりの自分だったと知る
+            ep_myfriend(w),
             ep_herdead(w),
             ep_herhome(w),
             ep_truth(w),
