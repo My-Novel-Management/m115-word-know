@@ -49,6 +49,11 @@ TIMES = (
 ITEMS = (
         # Tag / 名前 / 紹介
         ("letter", "彼女の手紙"),
+        ("book", "彼女の本"),
+        ("bookshelf", "本棚"),
+        ## 材料
+        ("wall", "壁"),
+        ("door", "扉"),
         )
 
 WORDS = (
