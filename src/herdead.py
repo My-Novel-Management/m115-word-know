@@ -55,7 +55,7 @@ def sc_news(w: World):
             ana.talk("本日未明に埼玉県内の高校生が転落死しました。自殺とみられ"),
             ana.talk("亡くなったのは高校二年の$full_asaさんで"),
             ito.talk("え？"),
-            stage=w.on_dyning,
+            stage=w.on_dining,
             day=w.in_news, time=w.at_evening,
             )
 

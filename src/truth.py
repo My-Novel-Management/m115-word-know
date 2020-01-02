@@ -40,7 +40,7 @@ def sc_wordknot(w: World):
             w.comment("$itoは彼女の本音を探した"),
             ito.do("彼女の書きなぐりを見つける"),
             letter.be(),
-            letter.wear("乱雑で荒々しい文字で", "孤独や死にたい願望など書かれている"),
+            letter.look("乱雑で荒々しい文字で", "孤独や死にたい願望など書かれている"),
             ito.do("読む"),
             asa.voice("○月×日、$Sと出会った"),
             asa.voice("この子なら共有してくれると思った"),
@@ -62,7 +62,7 @@ def sc_wordknot(w: World):
 
 ## episode
 def ep_truth(w: World):
-    return w.episode("EP",
+    return w.episode("彼女の本音",
             ## NOTE:
             ##  - 彼女の本音を知る
             ##  - 彼女とすれ違っていた
