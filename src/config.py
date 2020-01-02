@@ -29,11 +29,14 @@ PERSONS = (
         # Tag / 氏,名 / 歳 / 性別 / 職業 / 呼称 / 紹介
         ("ito", "糸", "", 17, "female", "高校生", "me:私"),
         ("asa", "麻美", "", 17, "female", "高校生", "me:ワタシ"),
+        ("hatsumi", "初美", "", 38, "female", "看護師", "me:私"),
         )
 
 STAGES = (
         # Tag / 名前 / 紹介
         ("rentalbox", "トランクルーム"),
+        ("herhome", "彼女の家"),
+        ("herroom", "彼女の部屋"),
         )
 
 DAYS = (
@@ -49,11 +52,21 @@ TIMES = (
 ITEMS = (
         # Tag / 名前 / 紹介
         ("letter", "彼女の手紙"),
-        ("book", "彼女の本"),
-        ("bookshelf", "本棚"),
-        ## 材料
-        ("wall", "壁"),
+        ("contract", "契約書"),
+        ("floor", "床"),
+        ("wall","壁"),
         ("door", "扉"),
+        ("entrance", "玄関"),
+        ("interior", "内装"),
+        ("exterior", "外装"),
+        ("seat", "シート"),
+        ("bed", "ベッド"),
+        ("desk", "学習机"),
+        ("bookshelf", "本棚"),
+        ("book", "本"),
+        ("greentea", "お茶"),
+        ("maru_table", "丸テーブル"),
+        ("phone", "スマートフォン"),
         )
 
 WORDS = (
