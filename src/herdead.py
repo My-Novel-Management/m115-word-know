@@ -21,7 +21,7 @@ def sc_days(w: World):
     desk, blackboard = W(w.desk), W(w.blackboard)
     return w.scene("忙しい日々",
             w.comment("試験や受験のことで忙しい日々"),
-            desk.be(), blackboard.be(),
+            w.load("in_classroom"),
             ito.be(),
             taka.be(),
             taka.do("しゃべりながら板書"),
@@ -31,7 +31,7 @@ def sc_days(w: World):
             ito.think("そこの謎の言葉の意味を考えていた"),
             ito.do("試験勉強に集中する"),
             camera=w.ito,
-            stage=w.on_highschool,
+            stage=w.on_classroom,
             day=w.in_parted, time=w.at_afternoon,
             )
 
@@ -43,7 +43,7 @@ def sc_news(w: World):
     tv = W(w.tv)
     return w.scene("彼女の死",
             w.comment("ニュースで流れてきた同姓同名"),
-            table.be(), tv.be(),
+            w.load("mydining"),
             ito.be("席について"),
             keizo.be(), chiyo.be(),
             ito.talk("おかわり"),
@@ -55,7 +55,7 @@ def sc_news(w: World):
             ana.talk("本日未明に埼玉県内の高校生が転落死しました。自殺とみられ"),
             ana.talk("亡くなったのは高校二年の$full_asaさんで"),
             ito.talk("え？"),
-            stage=w.on_dyning,
+            stage=w.on_dining,
             day=w.in_news, time=w.at_evening,
             )
 
@@ -65,6 +65,7 @@ def sc_checksrc(w: World):
     phone = W(w.phone)
     return w.scene("確認",
             w.comment("いくら確かめてもそこに彼女の遺言も何もなかった"),
+            w.load("in_myroom"),
             ito.be("慌てて連絡を取ろうとしている"),
             ito.have(w.phone),
             phone.look("返事がないLINE"),
@@ -99,6 +100,7 @@ def sc_gotoherhome(w: World):
             ito.think("彼女が何故死んだのかを突き止めたい"),
             ito.go("力強く"),
             sky.look("雪がちらつき"),
+            stage=w.on_myhome,
             day=w.in_findher, time=w.at_morning,
             )
 

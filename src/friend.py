@@ -21,7 +21,7 @@ def sc_alonelife(w: World):
     board, desk = W(w.blackboard), W(w.desk)
     return w.scene("つまらない学生生活",
             w.comment("糸にとって学校はただ義務の為に通うだけの場所"),
-            board.be(), desk.be(),
+            w.load("in_classroom"),
             ito.be("勉強している"),
             taka.be("板書中"),
             taka.talk("えー、お前ら来年は受験生だから、今のうちからしっかりとやっておくように"),
@@ -42,7 +42,7 @@ def sc_myfriend(w: World):
     phone = W(w.phone)
     return w.scene("親友",
             w.comment("SNSの親友と話せる家が一番幸せだった"),
-            bed.be(),
+            w.load("in_myroom"),
             ito.be("寝転がり"),
             ito.have(w.phone),
             ito.talk("えー、そんなことないよ"),
@@ -63,6 +63,7 @@ def sc_herletter(w: World):
     return w.scene("彼女の手紙",
             w.comment("彼女から手紙をもらって、綺麗な字にどんな子だろうと",
                 "いつか会おうと書いてあった"),
+            w.load("myliving"),
             ito.be(),
             chiyo.come("手紙を持って"),
             chiyo.talk("これ、あんたに"),
@@ -79,6 +80,7 @@ def sc_herwish(w: World):
     ito, asa = W(w.ito), W(w.asa)
     letter = W(w.letter)
     return w.scene("手紙の中身",
+            w.load("in_myroom"),
             ito.come(),
             ito.have(w.letter),
             ito.do("手紙を読む"),

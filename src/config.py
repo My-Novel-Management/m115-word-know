@@ -43,6 +43,7 @@ STAGES = (
         ("myhome", "糸の家", "マンション三階"),
         ("herhome", "彼女の家"),
         ("herroom", "彼女の部屋"),
+        ("classroom", "教室"),
         )
 
 DAYS = (
@@ -82,6 +83,15 @@ ITEMS = (
         ("greentea", "お茶"),
         ("maru_table", "丸テーブル"),
         ("phone", "スマートフォン"),
+        ("window", "窓"),
+        ("ceil", "天井"),
+        ("boxroom", "個室"),
+        ("building", "ビル"),
+        ("road", "道"),
+        ("house", "家"),
+        ("gate", "門"),
+        ("sofa", "ソファ"),
+        ("chair", "椅子"),
         )
 
 WORDS = (

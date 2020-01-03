@@ -8,6 +8,8 @@ sys.path.append('storybuilder')
 from storybuilder.builder.world import World
 from storybuilder.assets import basic
 from config import DAYS, ITEMS, LAYERS, PERSONS, RUBIS, STAGES, TIMES, WORDS
+from designs import set_stages, set_items
+from characters import set_charas
 from src.demo.main import ep_demo
 from src.friend import ep_myfriend
 from src.herdead import ep_herdead
@@ -44,6 +46,9 @@ def world():
             STAGES, ITEMS, DAYS, TIMES, WORDS,
             RUBIS, LAYERS)
     w.entryBlock(
+            *set_charas(w),
+            *set_stages(w),
+            *set_items(w),
             )
     return w
 

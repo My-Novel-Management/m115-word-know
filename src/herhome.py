@@ -21,8 +21,7 @@ def sc_intrain(w: World):
     seat = W(w.seat)
     return w.scene("電車の中で",
             w.comment("彼女の住む街に行くまでの車内で考える"),
-            seat.be(),
-            man.be(10),lady.be(10),
+            w.load("in_train"),
             ito.be("乗っている"),
             ito.do("つり革に掴まって"),
             ito.explain("これから$asaの家に行く"),
@@ -41,7 +40,7 @@ def sc_herhome(w: World):
     exterior = W(w.exterior)
     return w.scene("彼女の家",
             w.comment("彼女の家を見て、印象との違い、違和感"),
-            entrance.be(), door.be(), exterior.be(),
+            w.load("out_herhome"),
             ito.come(),
             ito.do("家を見上げる"),
             exterior.look("二階建て戸建て住宅"),
@@ -63,6 +62,7 @@ def sc_hermother(w: World):
     tea = W(w.greentea)
     return w.scene("彼女の母親",
             w.comment("彼女の母親から説明を受ける"),
+            w.load("herliving"),
             ito.be("座っている"),
             hatsu.come("お茶を持って"),
             hatsu.talk("お茶でよかったかしら"),
@@ -98,14 +98,10 @@ def sc_herroom(w: World):
     book, shelf = W(w.book), W(w.bookshelf)
     return w.scene("彼女の部屋",
             w.comment("彼女の部屋を見せてもらうが"),
-            ## load('asa_room')
+            w.load("herroom"),
             hatsu.come(),
             hatsu.talk("本当に何もないから"),
             ito.come(),
-            interior.be(),
-            interior.look("簡素で何も置かれていない"),
-            bed.be(), desk.be(),
-            shelf.be(), book.be(10),
             hatsu.talk("ね？"),
             ito.talk("少し見ても？"),
             hatsu.talk("自由にして"),

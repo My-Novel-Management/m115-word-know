@@ -15,22 +15,33 @@ _ = W.getWho()
 
 
 ## scenes
+def sc_trunkroom(w: World):
+    ito,asa = W(w.ito), W(w.asa)
+    building = W(w.building)
+    return w.scene("トランクルーム",
+            w.comment("$asaの契約していたトランクルームにやってくる"),
+            w.load("out_trunkroom"),
+            ito.come(),
+            ito.do("ビルを見上げて"),
+            ito.talk("ここなの？"),
+            ito.go("入っていく"),
+            camera=w.ito,
+            stage=w.on_rentalbox,
+            day=w.in_findher, time=w.at_afternoon,
+            )
+
 def sc_herbox(w: World):
     ito,asa = W(w.ito), W(w.asa)
     wall, door = W(w.wall), W(w.door)
     return w.scene("彼女の箱",
-            w.comment("$asaの契約していたトランクルームにやってくる"),
             w.comment("寒々としたものを感じさせる", "彼女の心との距離感を"),
-            # load('trunkroom')
-            ito.come(),
+            w.load("in_trunkroom"),
+            ito.be(),
+            ito.explain("フロアの外観の説明"),
             ito.do("簡素なコンテナが並ぶのを見て", "寒々とする"),
-            door.be(),
             door.look("金属製の冷たい扉", "窓もなく"),
             ito.talk("何を、ここに？"),
             ito.do("鍵を開けて中に"),
-            camera=w.ito,
-            stage=w.on_rentalbox,
-            day=w.in_findher, time=w.at_afternoon,
             )
 
 def sc_wordknot(w: World):
@@ -38,9 +49,15 @@ def sc_wordknot(w: World):
     letter, book, shelf = W(w.letter), W(w.book), W(w.bookshelf)
     return w.scene("言葉の結び目",
             w.comment("$itoは彼女の本音を探した"),
+            w.load("trunkroom"),
+            ito.come(),
+            ito.think("こんな場所で何を？"),
+            ito.do("見つける"),
+            ito.think("その違和感は確信に変わった"),
+            ito.think("ここが、彼女のほんとの居場所だったんだ"),
             ito.do("彼女の書きなぐりを見つける"),
             letter.be(),
-            letter.wear("乱雑で荒々しい文字で", "孤独や死にたい願望など書かれている"),
+            letter.look("乱雑で荒々しい文字で", "孤独や死にたい願望など書かれている"),
             ito.do("読む"),
             asa.voice("○月×日、$Sと出会った"),
             asa.voice("この子なら共有してくれると思った"),
@@ -62,13 +79,14 @@ def sc_wordknot(w: World):
 
 ## episode
 def ep_truth(w: World):
-    return w.episode("EP",
+    return w.episode("彼女の本音",
             ## NOTE:
             ##  - 彼女の本音を知る
             ##  - 彼女とすれ違っていた
             ##  - 自分の言葉と彼女の言葉の間に「ホンネ」があったと気づいた
             ##  - 言葉の結び目を解く
             ##  - 彼女の本音を抱き締める
+            sc_trunkroom(w),
             sc_herbox(w),
             sc_wordknot(w),
             )
